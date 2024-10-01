@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement; //importing SceneManagement Library 
+
+
 
 public class playercontroller : MonoBehaviour
 {
@@ -67,4 +71,17 @@ public class playercontroller : MonoBehaviour
 
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //check if colliding with a game object with speficic tag 
+        if (collision.gameObject.tag.Equals("arrow1"))
+        {
+            Debug.Log("change scence");
+            SceneManager.LoadScene("home");
+        }
+    }
+
+
 }
+
