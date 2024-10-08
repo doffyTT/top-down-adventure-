@@ -11,6 +11,7 @@ public class playercontroller : MonoBehaviour
 
     public float speed;
     private SpriteRenderer sr;
+    public bool hasPasta = false;
 
     //sprite variables 
     public Sprite upSprite;
@@ -64,6 +65,7 @@ public class playercontroller : MonoBehaviour
         {
             newPosition.x += speed;
             sr.sprite = rightSprite;
+
         }
 
 
@@ -80,6 +82,25 @@ public class playercontroller : MonoBehaviour
             Debug.Log("change scence");
             SceneManager.LoadScene("home");
         }
+
+        if (collision.gameObject.tag.Equals("Pasta"))
+        {
+            Debug.Log("obtained Pasta");
+            hasPasta = true; //player has the Pasta now
+
+        }
+
+        if (collision.gameObject.tag.Equals("door2") && hasPasta == true)
+        {
+            Debug.Log("unlocked door!");
+            //take to new scene
+
+        }
+        
+
+       
+
+
     }
 
 
