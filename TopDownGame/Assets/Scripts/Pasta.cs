@@ -21,7 +21,7 @@ public class Pasta : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Ive been collected!");
-            //destory the Pasta
+            Destroy(this.gameObject);//destory the Pasta
 
         }
     }

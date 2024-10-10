@@ -20,15 +20,20 @@ public class playercontroller : MonoBehaviour
     public Sprite frontSprite;
 
 
+    // public Rigidbody2D rb;
 
-   // public Rigidbody2D rb;
-
-
-
+    public static playercontroller instance;
     // Start is called before the first frame update
     void Start()
     {
        sr= GetComponent<SpriteRenderer>();
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        instance= this; //reassign the instance to the current player 
+        GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -93,7 +98,7 @@ public class playercontroller : MonoBehaviour
         if (collision.gameObject.tag.Equals("door2") && hasPasta == true)
         {
             Debug.Log("unlocked door!");
-            //take to new scene
+            SceneManager.LoadScene(2); //take to new scene
 
         }
         
