@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement; //importing SceneManagement Library 
 
 
@@ -19,6 +20,11 @@ public class playercontroller : MonoBehaviour
     public Sprite rightSprite;
     public Sprite frontSprite;
 
+    //audio variables
+    public AudioSource soundEffects;
+    public AudioClip itemCollect;
+    public AudioSource doorEnter;
+    public AudioSource[] sounds;
 
     // public Rigidbody2D rb;
 

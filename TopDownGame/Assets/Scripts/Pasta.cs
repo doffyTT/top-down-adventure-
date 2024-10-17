@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Pasta : MonoBehaviour
 {
+
+    public AudioSource Pastasound;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +26,7 @@ public class Pasta : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Ive been collected!");
+            Pastasound.Play();
             Destroy(this.gameObject);//destory the Pasta
 
         }
